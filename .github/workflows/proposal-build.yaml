@@ -1,7 +1,8 @@
 name: Build Proposal document
 on:
-  paths:
-    - "proposal/*"
+  push:
+    paths:
+      - "proposal/*"
 jobs:
   build_latex:
     runs-on: ubuntu-latest
