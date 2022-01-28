@@ -1,0 +1,61 @@
+\documentclass[12pt,letterpaper]{article}
+%\documentclass[12pt,letterpaper]{report}
+\author{Andrew Kail}
+
+%===============================================================
+% Style sheet input 
+%===============================================================
+\input{mystyle.sty}
+
+% acronyms and definitions
+\input{tex/acronyms.tex}
+
+\begin{document}
+
+%===============================================================
+% Title page and abstract
+%===============================================================
+\pagenumbering{gobble}
+
+\pagenumbering{roman}
+\include{tex/titlepage}
+
+%\setcounter{page}{2} 
+
+%===============================================================
+% Preface material 
+%===============================================================
+%\setcounter{page}{4} 
+%\setcounter{page}{4} 
+\begin{singlespace}
+    
+\renewcommand\contentsname{Table of Contents}
+\tableofcontents
+\end{singlespace}
+\pagebreak
+ %===============================================================
+% Main tex files 
+%===============================================================
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\input{tex/introduction}
+\input{tex/motivation}
+\input{tex/problem}
+\input{tex/litreview}
+\input{tex/researchplan}
+
+%===============================================================
+% Bibliography 
+%===============================================================
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+%===============================================================
+% Appendix 
+%===============================================================
+% Appendix 
+% The appendix will house information that may be too tedious for the reader and/or
+% unnecessary for the subject at hand.  The appendix will be divided into several sections
+% depending on the material.
+\end{document}

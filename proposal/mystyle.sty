@@ -1,0 +1,78 @@
+%===============================================================
+% Style sheet
+%===============================================================
+
+% The material stored in this file stores all the formatting information
+% for this document.  This one in particular has been defined to work
+% with a Thesis in mind.
+
+\usepackage[margin=1.0in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage[nottoc]{tocbibind}
+\usepackage[acronyms,nonumberlist,toc]{glossaries}
+\usepackage[square,sort,comma,numbers]{natbib}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{xcolor}
+\usepackage[table]{xcolor}
+\usepackage{mdframed}
+\usepackage{pdfpages}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{transparent}
+\usepackage{graphicx}
+
+\usepackage{setspace} % not sure
+\usepackage{subcaption}
+\usepackage{caption}
+
+% Command to linclude a figure
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+%  The minted package is used for source code highlighting
+\usepackage{minted}
+\usemintedstyle{solarized-dark}
+\surroundwithmdframed[backgroundcolor=lightgray!50, linecolor=lightgray!50]{minted}
+
+
+\usepackage[titletoc]{appendix}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{\thepage}
+\lfoot{}
+\cfoot{}
+
+\rfoot{}
+%\headrulewidtho
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[R]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}}
+
+
+\newcommand{\makeAppendixPage}{
+    \newpage
+    \addToTOC{Appendix}
+    \vspace*{2.0in}
+    \begin{center}\Huge \bf{Appendix} \end{center}
+        \newpage
+    }
+
+\newcommand {\addToTOC}[1] {
+    \cleardoublepage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{#1}
+}
+
+\doublespacing

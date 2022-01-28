@@ -1,0 +1,94 @@
+\section{Research Plan}
+\label{sec:researchplan}
+% action research 
+The proposed work plan will begin by building a test and training data set vetted and verified by SME’s in the ATG.  This data will be used throughout the project to train and test the developed machine learning models.  There will be two subdivisions of the data, one for training/testing of the machine learning models, and another smaller segment used for final verification and comparison of the sans-theory guided model against enhanced model.  By setting aside a segment of data for final evaluation, we ensure that this data is independent and not used in the creation of the model and tuning of its hyperparameters, thus reducing data “leakage”. The training/test set for model creation will include ten years of continuous weather data, while the final evaluation set will include the immediately following year. This data will be collected from the WINDS system. The data collection will focus on datatypes QA’d per regulatory requirements. The verification process will validate the manually labeled data at a high level to ensure data completeness and accuracy. This phase of the project will result in a compiled, verified and cleaned data set for eleven years of WINDS data.  
+
+Once the data has been compiled, a baseline will be established using standard DNN’s, decision trees, support vector machines (SVM), ensemble models, regression classifiers or k-nearest neighbors.  These baselines serve a dual purpose to 1) provide performance measures for comparison with the TGML enhanced models and 2) give a working proof-of-concept anomaly detection model. These models will be built using popular and robust machine learning Python libraries such as Keras and Scikit-Learn and trained and tested on the ten-year training/test data. Upon the completion of model tuning, the machine learning models will go through final evaluation using the one-year validation test set and the results recorded.
+
+The final task will be to evaluate Recurrent Neural Networks (RNN), Long Short-Term Memory (LSTM) Neural Networks, and Transformer Architectures.  RNNs are a Feed Forward Neural Network that maintain the state of connections through time. Each layer is fed information from the previous layer, as well as themselves.  One of their main drawbacks though is the ‘vanishing gradient’ during optimization, or model training.  With each pass through the data set, information gets lost the deeper the layers and further in time you go.  They have many uses for time-series problems, such as the time dependent weather conditions we are analyzing \cite{elmanFindingStructureTime1990a}. LSTM networks also attempt to combat the vanishing / exploding gradient problem by introducing gates and an explicitly defined memory cell.2  These two neural network architectures are promising methods for building upon the previous work of the project.
+
+\subsection{Milestones}
+
+\begin{center}
+    \begin{tabular}{|l|p{12cm}|l|}
+        \hline
+        Milestone & Description & Est. Time \\
+        \hline
+        \rowcolor{gray!50}
+        1 & Data Collection and Validation & 3 months \\
+        \hline
+        1.1 & Identify appropriate data sets with Subject Matter Experts in ATG  & \\
+        \hline
+        1.2 & Validate labeling of acquired data sets  & \\
+        \hline
+        1.3 & Segment into training, test and validation data sets. & \\
+        \hline
+        \rowcolor{gray!50}
+        2 & Establish baselines for anomaly detection& 12 months \\
+        \hline
+        2.1 &  Leverage existing state-of-the-art meteorological anomaly detection techniques  & \\
+        \hline
+        2.2 &  Train multiple standalone machine learning models such as K-Nearest Neighbors, Decisions Tree, etc to establish machine learning baseline & \\
+        \hline
+        \rowcolor{gray!50}
+
+        3 &  Investigate supervised deep learning methods for anomaly detection & 12 months\\
+        \hline
+        3.1 &  Investigate RNN, LSTM, Attention Networks as further means of improving the machine learning model & \\
+        \hline
+        3.2 &  Leverage theory guided machine learning to integrate engineering controls and physical constraints into model training & \\
+        \hline
+
+        \rowcolor{gray!50}
+        4 & Investigate unsupervised learning and other statistical methods & 12 months\\
+        \hline
+        4.1 &  Leverage existing statistical and outlier techniques employed by meteorologists & \\
+        \hline
+        4.1 &  Auto-encoder variants for deep learning & \\
+        \hline
+
+        \rowcolor{gray!50}
+        5 & Formulate ensemble methodology & 12 months \\
+        \hline
+        5.1 &  Combine supervised and unsupervised methods  & \\
+
+        \hline
+    \end{tabular}
+\end{center}
+
+%
+%\subsection{Milestone 1: Data Collection and Validation}
+%
+%\begin{itemize}
+%    \item Identify appropriate data sets with Subject Matter Experts in ATG
+%    \item Validate labeling of acquired data sets 
+%    \item Segment into training, test and validation data sets.
+%        \begin{itemize}
+%            \item Performan data exploration
+%            \item How imbalanced is the data set
+%        \end{itemize}
+%\end{itemize}
+%\subsection{Milestone 2: Establish baselines}
+%Establish baselines for anomaly detection
+%\begin{itemize}
+%    \item Leverage existing state-of-the-art meteorological anomaly detection techniques 
+%    \item Train multiple standalone machine learning models such as K-Nearest Neighbors, Decisions Tree, etc to establish machine learning baseline
+%\end{itemize}
+%
+%\subsection{Milestone 3: Investigate supervised deep learning methods for anomaly detection}
+%\begin{itemize}
+%    \item Investigate RNN, LSTM, Attention Networks as further means of improving the machine learning model
+%    \item Leverage theory guided machine learning to integrate engineering controls and physical constraints into model training
+%\end{itemize}
+%
+%\subsection{Milestone 4: Investigate unsupervised learning and other statistical methods}
+%\begin{itemize}
+%    \item Leverage existing statistical and outlier techniques employed by meteorologists
+%    \item Auto-encoder variants for deep learning
+%\end{itemize}
+%
+%\subsection{Milestone 5: Formulate ensemble methodology}
+%\begin{itemize}
+%    \item Combine supervised and unsupervised methods 
+%\end{itemize}
+%
