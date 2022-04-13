@@ -8,6 +8,7 @@
 \input{mystyle.sty}
 
 % acronyms and definitions
+\makeglossaries
 \input{tex/acronyms.tex}
 
 \begin{document}
@@ -31,6 +32,9 @@
     
 \renewcommand\contentsname{Table of Contents}
 \tableofcontents
+\pagebreak
+%\printglossary[title=Terms Used, toctitle=List of Terms]
+\printglossary[type=\acronymtype]
 \end{singlespace}
 
 \pagebreak
